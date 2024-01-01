@@ -1,3 +1,4 @@
+import os
 
 #Dimensions
 X_EDGE=5
@@ -22,3 +23,17 @@ else:
 #(green  -> FL assigned)
 #(blu    -> MCL assigned) 
 clr_array=[(0,0,0),(255,255,0),(255,0,0),(0,255,0),(0,0,255)]
+
+
+#load Dataset
+wrk_dir = ""
+
+data_dir = os.path.join(wrk_dir, "data")
+
+#split ratio
+RATIO_TRAIN=0.70
+RATIO_TEST=0.15
+
+RATIO_VALIDATION=0.15
+
+
