@@ -19,5 +19,18 @@ It includes a total of **374 RGB images** (size: **1388 × 1040 pixels**), distr
 On Kaggle you can find the data-set to [download](https://www.kaggle.com/datasets/andrewmvd/malignant-lymphoma-classification?select=MCL).
 
 
+## Project Files Description
+
+###  main_file.ipynb
+The `main_file.ipynb` notebook includes all **data preprocessing steps**, the **CNN model definition**, and the **training process**.  
+It can be executed step-by-step to reproduce the model training workflow and visualize performance metrics such as accuracy and loss.
+
+### live_classificator.py
+The `live_classificator.py` script allows users to **run the trained classifier on sample images**.  
+It applies a **winner-take-all** decision strategy to assign each input image to the most likely lymphoma subtype.
+
+
+
+
 
 The **main_file** is a jupyter notebook containing the prepocessing steps and CNN definition&training; **live_classificator** is a python file that can be used to run the classificator on sample images using a *winner-take-all* strategy
