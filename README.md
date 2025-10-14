@@ -28,9 +28,3 @@ It can be executed step-by-step to reproduce the model training workflow and vis
 ### live_classificator.py
 The `live_classificator.py` script allows users to **run the trained classifier on sample images**.  
 It applies a **winner-take-all** decision strategy to assign each input image to the most likely lymphoma subtype.
-
-
-
-
-
-The **main_file** is a jupyter notebook containing the prepocessing steps and CNN definition&training; **live_classificator** is a python file that can be used to run the classificator on sample images using a *winner-take-all* strategy
