@@ -1,10 +1,24 @@
 # Lymphoma Subtype Histopathology Classificator (CNN based)
 
-## Overview
+**Authors:**  
+**Matteo Marchesin – Deep Learning Researcher**  
+**Antonio Iacuzio – Biomedical Engineer**
+
+## Abstract
 Lymphoma is a type of cancer that originates in lymphocytes and encompasses several subtypes, each characterized by distinct prognoses and treatment approaches. These subtypes can traditionally be distinguished based on their specific morphological patterns and cytological features, although modern classification increasingly relies on molecular and immunological techniques.
+This project implements a **Convolutional Neural Network (CNN)** to classify histological images of these three lymphoma subtypes.  
+Images are divided into small patches that are independently classified, and the image-level label is assigned using a **winner-take-all** strategy (majority voting on patch results).  
 
+**Model performance:**
+- MCL: Accuracy = 0.90, Recall = 0.93  
+- FL: Accuracy = 0.92, Recall = 0.92  
+- CLL: Accuracy = 0.91, Recall = 0.89  
 
-## Dataset Description
+---
+
+##  Method
+
+### Dataset Description
 The dataset used in this study comprises [hematoxylin and eosin (H&E)](https://en.wikipedia.org/wiki/H%26E_stain) stained histopathological images categorized by lymphoma subtype.  
 It includes a total of **374 RGB images** (size: **1388 × 1040 pixels**), distributed as follows:
 
@@ -19,6 +33,30 @@ It includes a total of **374 RGB images** (size: **1388 × 1040 pixels**), distr
 On Kaggle you can find the data-set to [download](https://www.kaggle.com/datasets/andrewmvd/malignant-lymphoma-classification?select=MCL).
 
 
+### 2. Image Preprocessing
+To minimize staining and acquisition variability:
+- **Standardization** of color distributions using *Principal Components Color Matching (PCCM)* (`colortrans` library).  
+- **Color Deconvolution** to isolate hematoxylin and eosin components (`HistomicsTK`).  
+
+These transformations were evaluated but found not to improve classification accuracy for this dataset.
+### 3. CNN Architecture
+A simplified **AlexNet** architecture was implemented in **Keras**, adapted for small input patches (50×50×3).  
+
+**Layers:**
+- Convolution + Batch Normalization + MaxPooling blocks  
+- Flatten layer  
+- Dense layers (ReLU activation)  
+- Output layer (3 neurons, softmax via SparseCategoricalCrossEntropy loss)
+
+## ⚙️ Training Configuration
+- **Patch Size:** 50×50 (best trade-off between context and efficiency)  
+- **Batch Size:** 250 (improved validation stability)  
+- **Dropout:** 0.2 (regularization)  
+- **Learning Rate:** 1e−3 (with optional decay)  
+- **Epochs:** 200  
+- **Optimizer:** Adam  
+
+---
 ## Project Files Description
 
 ###  main_file.ipynb
