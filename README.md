@@ -1,8 +1,8 @@
 # Lymphoma Subtype Histopathology Classificator (CNN based)
 
-**Authors:**  
-**Matteo Marchesin – Deep Learning Researcher**  
-**Antonio Iacuzio – Biomedical Engineer**
+## Authors:
+**Matteo Marchesin**  
+**Antonio Iacuzio**
 
 ## Abstract
 Lymphoma is a type of cancer that originates in lymphocytes and encompasses several subtypes, each characterized by distinct prognoses and treatment approaches. These subtypes can traditionally be distinguished based on their specific morphological patterns and cytological features, although modern classification increasingly relies on molecular and immunological techniques.
@@ -19,7 +19,7 @@ Images are divided into small patches that are independently classified, and the
 ##  Method
 
 <p align="center">
-  <img src="images/pipeline.jpg" alt="Pipeline Overview" width="60%">
+  <img src="images/pipeline.jpg" alt="Pipeline Overview" width="60%" height="60%">
   <br>
   <em>Example of the processing pipeline for lymphoma image classification.</em>
 </p>
