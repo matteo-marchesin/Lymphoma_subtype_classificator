@@ -41,8 +41,8 @@ To minimize staining and acquisition variability:
 These transformations were evaluated but found not to improve classification accuracy for this dataset.
 ### 3. CNN Architecture
 
-![Pipeline Overview](images/cnn.png)
-*Example of the processing pipeline for lymphoma image classification.*
+![Pipeline Overview](images/cnn_diagram.jpg)
+***Example of the processing pipeline for lymphoma image classification.***
 
 A simplified **AlexNet** architecture was implemented in **Keras**, adapted for small input patches (50×50×3).  
 
@@ -59,9 +59,14 @@ A simplified **AlexNet** architecture was implemented in **Keras**, adapted for 
 - **Learning Rate:** 1e−3 (with optional decay)  
 - **Epochs:** 200  
 - **Optimizer:** Adam
-- 
-![Output Example](images/result_ex.jpg)
-*Example of the processing pipeline for lymphoma image classification.*
+
+
+<p align="center">
+  <img src="images/result_ex.jpg" alt="Output Example" width="60%">
+  <br>
+  <em>Example of the processing pipeline for lymphoma image classification.</em>
+</p>
+
 ---
 ## Project Files Description
 
