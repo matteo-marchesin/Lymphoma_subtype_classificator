@@ -18,6 +18,12 @@ Images are divided into small patches that are independently classified, and the
 
 ##  Method
 
+<p align="center">
+  <img src="images/pipeline.jpg" alt="Pipeline Overview" width="60%">
+  <br>
+  <em>Example of the processing pipeline for lymphoma image classification.</em>
+</p>
+
 ### Dataset Description
 The dataset used in this study comprises [hematoxylin and eosin (H&E)](https://en.wikipedia.org/wiki/H%26E_stain) stained histopathological images categorized by lymphoma subtype.  
 It includes a total of **374 RGB images** (size: **1388 × 1040 pixels**), distributed as follows:
@@ -39,10 +45,15 @@ To minimize staining and acquisition variability:
 - **Color Deconvolution** to isolate hematoxylin and eosin components (`HistomicsTK`).  
 
 These transformations were evaluated but found not to improve classification accuracy for this dataset.
+
+
 ### 3. CNN Architecture
 
-![Pipeline Overview](images/cnn_diagram.jpg)
-***Example of the processing pipeline for lymphoma image classification.***
+<p align="center">
+  <img src="images/cnn_diagram.jpg" alt="CNN Architecture" width="60%">
+  <br>
+  <em>CNN Architecture</em>
+</p>
 
 A simplified **AlexNet** architecture was implemented in **Keras**, adapted for small input patches (50×50×3).  
 
@@ -52,14 +63,17 @@ A simplified **AlexNet** architecture was implemented in **Keras**, adapted for 
 - Dense layers (ReLU activation)  
 - Output layer (3 neurons, softmax via SparseCategoricalCrossEntropy loss)
 
-## ⚙️ Training Configuration
+### Training Configuration
 - **Patch Size:** 50×50 (best trade-off between context and efficiency)  
 - **Batch Size:** 250 (improved validation stability)  
 - **Dropout:** 0.2 (regularization)  
 - **Learning Rate:** 1e−3 (with optional decay)  
 - **Epochs:** 200  
 - **Optimizer:** Adam
+- 
+---
 
+## Results
 
 <p align="center">
   <img src="images/result_ex.jpg" alt="Output Example" width="60%">
@@ -67,7 +81,7 @@ A simplified **AlexNet** architecture was implemented in **Keras**, adapted for 
   <em>Example of the processing pipeline for lymphoma image classification.</em>
 </p>
 
----
+
 ## Project Files Description
 
 ###  main_file.ipynb
