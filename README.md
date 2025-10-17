@@ -48,7 +48,7 @@ These transformations were evaluated but found not to improve classification acc
 
 
 <p align="center">
-  <img src="images/cnn_diagram" alt="CNN Architecture" width="60%" height="60%">
+  <img src="images/cnn_diagram.jpg" alt="CNN Architecture" width="60%" height="60%">
   <br>
   <em>CNN Architecture</em>
 </p>
@@ -77,7 +77,7 @@ A simplified **AlexNet** architecture was implemented in **Keras**, adapted for 
 <p align="center">
   <img src="images/result_ex.jpg" alt="Output Example" width="60%">
   <br>
-  <em>Example of an output image with classified patches.[blue(MCL),green(FL),red(MCL)]</em>
+  <em>Example of an output image with classified patches.[ blue (MCL), green(FL), red(MCL) ]</em>
 </p>
 
 
