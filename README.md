@@ -17,13 +17,6 @@ Images are divided into small patches that are independently classified, and the
 ---
 
 ##  Method
-
-<p align="center">
-  <img src="images/pipeline.jpg" alt="Pipeline Overview" width="60%" height="60%">
-  <br>
-  <em>Example of the processing pipeline for lymphoma image classification.</em>
-</p>
-
 ### Dataset Description
 The dataset used in this study comprises [hematoxylin and eosin (H&E)](https://en.wikipedia.org/wiki/H%26E_stain) stained histopathological images categorized by lymphoma subtype.  
 It includes a total of **374 RGB images** (size: **1388 × 1040 pixels**), distributed as follows:
@@ -45,12 +38,20 @@ The dataset was split into train (85%) and test (15%); the training set was furt
 The dataset showed substantial color variability and occasional artifacts due to differences in sample preparation, staining, and image acquisition protocols.
 
 To minimize staining and acquisition variability:
+
 - **Standardization** of color distributions using *Principal Components Color Matching (PCCM)* (`colortrans` library).  
 - **Color Deconvolution** to isolate hematoxylin and eosin components (`HistomicsTK`).  
 
 These transformations were evaluated but found not to improve classification accuracy for this dataset.
 
 ### 3. CNN Architecture
+
+
+<p align="center">
+  <img src="images/cnn_diagram" alt="CNN Architecture" width="60%" height="60%">
+  <br>
+  <em>CNN Architecture</em>
+</p>
 
 We started from a baseline model similar to that proposed by Janowczyk et al., adapting it to larger input patches (50×50 vs 32×32) and convolutional layers with more filters, while keeping kernel size and stride unchanged.
 
